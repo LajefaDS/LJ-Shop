@@ -1,0 +1,45 @@
+Ukuran Device Sedang = [
+@media screen and (min-width: 550px)
+]
+
+Ukuran Device Besar = [
+@media screen and (min-width: 800px)
+]
+
+Ukuran Device Kecil = [
+@media screen and (min-width: 450px)
+]
+
+<div class="Atas">
+        <h2>LAJEFA.<b>G<b class="ba">a</b>M<b class="ba">e</b></b></h2>
+    </div>
+    <div class="menu">
+        <b id="satu" onclick="klikmenu();">&#8801;</b>
+<nav id="dua">
+<ul>
+   <li><a href="https://wa.me/+6285724105195" target="_blank">Whatsapp</a></li>
+   <li><a href="https://www.instagram.com/ladjusi" target="_blank">Instagram</a></li>
+   <li><a href="https://youtube.com/@LajefaSianturi-oz1ou" target="_blank">YouTube</a></li>
+   <form action="" method="post" id="myForm">
+   <li><textarea name="Komentar" id="komen" cols="30" rows="10" placeholder="Request Game"></textarea></li>
+   </form>
+   <li><input type="submit" value="Kirim" name="submit" onclick="SubForm()" class="Tombol"></li>
+   <li style="margin-bottom: 10px;"><a href="andex.html">Next</a></li>
+</ul>
+</nav>
+<script>
+function klikmenu(){
+   var x = document.getElementById('satu').innerHTML;
+   console.log(x);
+   if(x=="x"){
+     console.log("close");
+     document.getElementById('satu').innerHTML="&#8801;";
+     document.getElementById('dua').style.display="none";
+   }else {
+     console.log("satu");
+     document.getElementById('satu').innerHTML="x";
+     document.getElementById('dua').style.display="block";
+   }
+}
+</script>
+</div>

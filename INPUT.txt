@@ -1,0 +1,43 @@
+HTML [
+<form action="index.php" method="post">
+    <label for="">Email</label><br><br>
+    <input type="email" name="email" required><br><br>
+    <label for="">Password</label><br><br>
+    <input type="password" name="password" required><br><br>
+    <input type="submit" value="Kirim" name="submit">
+</form>
+]
+
+PHP TAMPIL DATA DAN CARA PRINT DAN CODING ALERT [
+<?php
+            $conneck=mysqli_connect("localhost", "root", "", "test");
+            $hasil=mysqli_query($conneck, "SELECT * FROM tes ORDER BY id DESC");
+        ?>
+        <?php if(mysqli_num_rows($hasil)>0){ ?>
+        <?php
+            $no = 1;
+            while($data = mysqli_fetch_array($hasil)){
+        ?>
+        <tr>
+            <td><?php echo $no ?></td>
+            <td><?php echo $data["Email"];?></td>
+            <td><?php echo $data["Password"];?></td>
+        </tr>
+        <?php $no++; } ?>
+        <?php } ?>
+    </table>
+    <button><a href="andex.html">Kembali</a></button>  / window.print();
+    <button><a href="undex.php">Print</a></button>    /
+]
+
+PHP PENGIRIMAN KE DATABASE [
+<?php
+$conneck=mysqli_connect("localhost", "root", "", "test");
+$email=$_POST['email'];
+$password=$_POST['password'];
+if(isset($_POST['submit'])){
+    mysqli_query($conneck,"INSERT INTO `tes` (`id`, `Email`, `Password`) VALUES (NULL, '$email', '$password');");
+    echo '<script>alert("data sudah terkirim");document.location.href="andex.php";</script>';
+}
+?>
+]
